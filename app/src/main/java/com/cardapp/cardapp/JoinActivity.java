@@ -111,8 +111,14 @@ public class JoinActivity extends AppCompatActivity {
                 checkExistId();
             }
         });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(JoinActivity.this,LoginActivity.class));
+                finish();
+            }
+        });
     }
-
     private void checkExistId() {
         db.collection("user")
                 .get()
